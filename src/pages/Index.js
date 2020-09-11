@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {
+  Icon,
+  WhiteSpace,
+  WingBlank,
+  Button,
+  SearchBar,
+} from '@ant-design/react-native';
 
 import {
   SafeAreaView,
@@ -8,7 +15,6 @@ import {
   View,
   Text,
   StatusBar,
-  Button,
 } from 'react-native';
 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
@@ -34,22 +40,25 @@ class Page extends Component {
                 <Text style={styles.footer}>Engine: Hermes</Text>
               </View>
             )}
-            <View style={styles.body}>
-              <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>{testText}</Text>
-              </View>
-            </View>
-            <Button
-              title="on click for test dispatch"
-              onPress={() => {
-                dispatch({
-                  type: 'globalModel/save',
-                  payload: {
-                    testText: 'dispatch test is ok!',
-                  },
-                });
-              }}
-            />
+
+            <SearchBar defaultValue="初始值" placeholder="搜索" />
+            <WingBlank>
+              <Icon name="account-book" size="md" color="red" />
+
+              <WhiteSpace />
+              <Button
+                onPress={() => {
+                  dispatch({
+                    type: 'globalModel/save',
+                    payload: {
+                      testText: 'dispatch test is ok!',
+                    },
+                  });
+                }}
+                type="primary">
+                primary
+              </Button>
+            </WingBlank>
           </ScrollView>
         </SafeAreaView>
       </>

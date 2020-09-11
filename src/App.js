@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {create} from 'dva-core';
-import {Provider} from 'react-redux';
+import { create } from 'dva-core';
+import { Provider } from 'react-redux';
 import models from './models';
 import Index from './pages/Index'; //    这个是react-navigation路由文件
 
