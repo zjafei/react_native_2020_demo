@@ -8,6 +8,7 @@ import {
   View,
   Text,
   StatusBar,
+  Button,
 } from 'react-native';
 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
@@ -17,7 +18,10 @@ import { Colors } from 'react-native/Libraries/NewAppScreen';
 }))
 class Page extends Component {
   render() {
-    const { testText } = this.props.globalModel;
+    const {
+      globalModel: { testText },
+      dispatch,
+    } = this.props;
     return (
       <>
         <StatusBar barStyle="dark-content" />
@@ -35,6 +39,17 @@ class Page extends Component {
                 <Text style={styles.sectionTitle}>{testText}</Text>
               </View>
             </View>
+            <Button
+              title="on click for test dispatch"
+              onPress={() => {
+                dispatch({
+                  type: 'globalModel/save',
+                  payload: {
+                    testText: 'dispatch test is ok!',
+                  },
+                });
+              }}
+            />
           </ScrollView>
         </SafeAreaView>
       </>
