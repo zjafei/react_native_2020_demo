@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
-  Icon,
   WhiteSpace,
   WingBlank,
   Button,
@@ -43,8 +42,7 @@ class Page extends Component {
 
             <SearchBar defaultValue="初始值" placeholder="搜索" />
             <WingBlank>
-              <Icon name="account-book" size="md" color="red" />
-
+              <Text>{testText}</Text>
               <WhiteSpace />
               <Button
                 onPress={() => {
@@ -56,7 +54,7 @@ class Page extends Component {
                   });
                 }}
                 type="primary">
-                primary
+                on press for test dispatch
               </Button>
             </WingBlank>
           </ScrollView>
