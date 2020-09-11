@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import {
   SafeAreaView,
@@ -10,14 +10,14 @@ import {
   StatusBar,
 } from 'react-native';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
-@connect(({globalModel}) => ({
+@connect(({ globalModel }) => ({
   globalModel,
 }))
 class Page extends Component {
   render() {
-    const {testText} = this.props.globalModel;
+    const { testText } = this.props.globalModel;
     return (
       <>
         <StatusBar barStyle="dark-content" />
